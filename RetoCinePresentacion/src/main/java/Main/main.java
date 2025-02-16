@@ -22,7 +22,7 @@ public class main {
     ICuidadesNegocio cuidadesNegocio=new CiudadesNegocio();
     
     
-    MenuAdministrador menuAdministrador=new MenuAdministrador();
+    MenuAdministrador menuAdministrador=new MenuAdministrador(cuidadesNegocio);
     menuAdministrador.setVisible(true);
 }
 }

@@ -4,17 +4,20 @@
  */
 package Presentacion;
 
+import inegocio.ICuidadesNegocio;
+
 /**
  *
  * @author Oley
  */
 public class MenuAdministrador extends javax.swing.JFrame {
-
+private ICuidadesNegocio cuidadesNegocio;
     /**
      * Creates new form MenuAdministrador
      */
-    public MenuAdministrador() {
+    public MenuAdministrador(ICuidadesNegocio cuidadesNegocio) {
         initComponents();
+        this.cuidadesNegocio=cuidadesNegocio;
     }
 
     /**
@@ -31,6 +34,11 @@ public class MenuAdministrador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Catalogo Ciudades");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -52,6 +60,16 @@ public class MenuAdministrador extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+CatalogoCiudades catalogoCiudades=new CatalogoCiudades(cuidadesNegocio);
+catalogoCiudades.setVisible(true);
+this.setVisible(false);
+
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
 
